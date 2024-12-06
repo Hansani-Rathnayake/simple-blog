@@ -1,11 +1,11 @@
 /* BlogPost Container */
 .blog-post {
-    background-color: #ffffff;
+    background-color: #177960;
     border: 1px solid #ddd;
     border-radius: 8px;
     margin: 1rem 0;
     padding: 1rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px #55c63f1a;
   }
   
   /* Title */
