@@ -4,9 +4,9 @@ import NavBar from "./components/NavBar";
 import BlogList from "./components/BlogList";
 import AddPost from "./components/AddPost";
 import EditPost from "./components/EditPost";
+import ViewPost from "./components/ViewPost";
 import Pagination from "./components/Pagination";
-
-
+import "./App.css"
 
 function App() {
   const [posts, setPosts] = useState([
@@ -38,7 +38,13 @@ function App() {
   return (
     <Router>
       <NavBar />
-      <div style={{ padding: "1rem" }}>
+      
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+            <div className="filter-section" style={{ padding: "1rem" }}>
         <input
           type="text"
           placeholder="Search posts..."
@@ -51,11 +57,6 @@ function App() {
           <option value="Tech">Tech</option>
         </select>
       </div>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
               <BlogList posts={currentPosts} onDelete={handleDeletePost} />
               <Pagination
                 postsPerPage={postsPerPage}
@@ -67,6 +68,8 @@ function App() {
         />
         <Route path="/add" element={<AddPost onAdd={handleAddPost} />} />
         <Route path="/edit/:id" element={<EditPost posts={posts} onEdit={handleEditPost} />} />
+        <Route path="/view/:id" element={<ViewPost posts={posts} />} />
+      
       </Routes>
     </Router>
   );

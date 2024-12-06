@@ -28,14 +28,14 @@ nav {
   }
   
   /* Styles for the blog-post class */
-  .blog-post {
+  /* .blog-post {
     list-style: none; 
     display: flex; 
     gap: 20px; 
     padding: 0; 
     margin: 0; 
   }
-  
+   */
   .blog-post li a {
     text-decoration: none; 
     color: #d5ba24; 
@@ -48,3 +48,19 @@ nav {
     border-radius: 5px; 
   }
   
+  .nav-bar-wrapper{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .logo-section{
+    img{
+        width: 20px;
+        height: auto;
+    }
+  }
+
+  .nav-item-section{
+    display: flex;
+    gap: 20px;
+  }

@@ -14,7 +14,8 @@ const AddPost = ({ onAdd }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div className="add-section-wrapper">
+        <form onSubmit={handleSubmit} className="add-post-section">
       <input
         type="text"
         placeholder="Title"
@@ -28,7 +29,7 @@ const AddPost = ({ onAdd }) => {
         onChange={(e) => setContent(e.target.value)}
         required
       >
-        
+
       </textarea>
       <select onChange={(e) => setCategory(e.target.value)} required>
         <option value="">Select Category</option>
@@ -37,6 +38,7 @@ const AddPost = ({ onAdd }) => {
       </select>
       <button type="submit">Add Post</button>
     </form>
+    </div>
   );
 };
 
