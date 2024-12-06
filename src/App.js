@@ -8,6 +8,7 @@ import ViewPost from "./components/ViewPost";
 import Pagination from "./components/Pagination";
 import "./App.css"
 
+
 function App() {
   const [posts, setPosts] = useState([
     { id: 1, title: "First Post", content: "Hello, world!", category: "General" },
@@ -31,8 +32,10 @@ function App() {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   const handleAddPost = (newPost) => setPosts([...posts, newPost]);
-  const handleEditPost = (updatedPost) =>
+  const handleEditPost = (updatedPost) =>{
+    console.log(posts.filter((t)=>t.id!==updatedPost.id))
     setPosts(posts.map((post) => (post.id === updatedPost.id ? updatedPost : post)));
+}
   const handleDeletePost = (id) => setPosts(posts.filter((post) => post.id !== id));
 
   return (
@@ -67,7 +70,7 @@ function App() {
           }
         />
         <Route path="/add" element={<AddPost onAdd={handleAddPost} />} />
-        <Route path="/edit/:id" element={<EditPost posts={posts} onEdit={handleEditPost} />} />
+        <Route path="/edit/:id" element={<EditPost posts={posts} onUpdate={handleEditPost} />} />
         <Route path="/view/:id" element={<ViewPost posts={posts} />} />
       
       </Routes>
